@@ -3,20 +3,21 @@
 
 <body>
   <main>
-    
     <h2><%= content %></h2>
-  
-    <section>
-     <img class="gal-img" src="https://i.imgur.com/6mCsq4v.jpg" alt="Statue selfie">
-
-     <img class="gal-img" src="https://i.imgur.com/chpR1Zp.jpg" alt="National treasure">
-
-     <img class="gal-img" src="https://i.imgur.com/PpBy23l.jpg" alt="Heeeeerrrresss Cloister!">
-    </section>
+    
+    <% gallery.forEach(object) { %>
+      <figure>
+        <a href="images/lrg/<%= object.imageID %>">
+          <img src="<%= images/sm/<%= object.fileName %>" alt="<%= object.title %>">
+        </a>
+        <figcaption>
+          <h3><%= object.attribution.credit %></h3>
+        </figcaption>
+      </figure>
+      <% } %>
+    
     
   </main>
-  
-
   <%- include('partials/footer') %>
 </body>
 </html>

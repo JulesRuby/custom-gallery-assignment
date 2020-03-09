@@ -1,0 +1,14 @@
+<% gallery.forEach(object) { 
+  if (object.id === imageID) { %>
+    <figure class="expandedFigure">
+      <img src="../images/lrg/<%= object.fileName %>" alt="<%= object.title %>" class="expandedImage">
+      <figcaption class="expandedCaption">
+        <a href="<%= object.attribution.url %>" class="authorAttribution">
+          <%= object.attribution.credit %>
+        </a>
+        <P>
+          <%= story.attribution.source %>
+        </P>
+      </figcaption>
+    </figure>
+    <% } %>
