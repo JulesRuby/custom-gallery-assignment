@@ -5,7 +5,8 @@ const ejs = require('ejs');
 const moment = require('moment');
 
 // Establish my personal modules
-const pageAttributes = require('./pageAttributes')
+const gallery = require('./gallery');
+const pageAttributes = require('./pageAttributes');
 
 // Establish variables 
 // assign a striong to dateYear to pass as an argument into the format() of the moment()
@@ -39,12 +40,10 @@ app.get('/blog', function(req, res) {
 
 
 app.use(express.static(path.join(__dirname, 'public'))); 
-// read more on how this mechanism operates, I only kind of get it
-// NOTE TO SELF: the path.join will result in an implicit next() if the specified directory is not found
 
 app.use(function(req,res,next) {
   res.status(404);
-  res.send(`404 not found, maybe I specified the wrong directory, or it doesn't exist... yet?`);
+  res.send(`404 not found!`);
 });
 
 
