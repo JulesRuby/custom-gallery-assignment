@@ -23,11 +23,11 @@
 > filename: fruit.js
 > const fruit-list = [
 >   banana: {
->   color: "yellow",
->   thicc: "as fuuuuuck"
+  >   color: "yellow",
+  >   thicc: "as fuuuuuck"
 >   },
 >   grapefruit: {
->   color: "pink",
->   thicc: "Damn, boi!"
+  >   color: "pink",
+  >   thicc: "Damn, boi!"
 >   }
 > ]

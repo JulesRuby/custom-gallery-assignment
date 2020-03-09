@@ -6,6 +6,7 @@ const moment = require('moment');
 
 // Establish my personal modules
 const gallery = require('./gallery');
+app.locals.gallery = require('./gallery');
 const pageAttributes = require('./pageAttributes');
 
 // Establish variables 
@@ -30,9 +31,18 @@ app.get('/about', function(req, res) {
   res.render('about', pageAttributes.about);
 });
 
+// app.get('/gallery', function(req, res) {
+//   res.render('gallery', pageAttributes.gallery);
+// });
+
 app.get('/gallery', function(req, res) {
-  res.render('gallery', pageAttributes.gallery);
+  res.render('gallery', gallery);
 });
+
+// app.get('/gallery/:id', function(req, res) {
+//   app.locals.imageID = req.params.id;
+//   res.render('gallery', pageAttributes[].gallery);
+// });
 
 app.get('/blog', function(req, res) {
   res.render('blog', pageAttributes.blog);
