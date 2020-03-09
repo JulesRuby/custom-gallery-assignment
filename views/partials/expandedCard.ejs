@@ -1,4 +1,8 @@
-<% gallery.forEach(object) { 
+<%- include('partials/head') %>
+<%- include('partials/header') %>
+
+
+<% starterImages.forEach(object) { 
   if (object.id === imageID) { %>
     <figure class="expandedFigure">
       <img src="../images/lrg/<%= object.fileName %>" alt="<%= object.title %>" class="expandedImage">
@@ -12,3 +16,5 @@
       </figcaption>
     </figure>
     <% } %>
+
+<%- include('partials/footer') %>

@@ -5,9 +5,7 @@ const ejs = require('ejs');
 const moment = require('moment');
 
 // Establish my personal modules
-const starterImages = require('./images');
-app.locals.starterImages = require('./images');
-app.locals.starterImages = starterImages;
+const starterImages = require('./gallery');
 const pageAttributes = require('./pageAttributes');
 
 // Establish variables 
@@ -19,6 +17,8 @@ const app = express();
 // make these accessible throughout my ejs 
 app.locals.moment = require('moment');
 app.locals.dateYear = dateYear;
+
+app.locals.starterImages = starterImages;
 
 // Define the 'view engine' that we'll be using. In this case it will be ejs, but it could be something like pug or handlebars
 app.set('view engine', 'ejs');
@@ -35,10 +35,6 @@ app.get('/about', function(req, res) {
 app.get('/gallery', function(req, res) {
   res.render('gallery', pageAttributes.gallery);
 });
-
-// app.get('/gallery', function(req, res) {
-//   res.render('gallery', {});
-// });
 
 app.get('/gallery/:id', function(req, res) {
   app.locals.imageID = req.params.id;
