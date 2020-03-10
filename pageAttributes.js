@@ -14,7 +14,13 @@ const pageAttributes = {
   gallery: {
     title: 'Gallery',
     intro: 'The bestest gallery',
-    content: 'My hawt selfies'
+    content: 'ANIMAL PICS'
+  },
+
+  galleryExpanded: {
+    title: 'gallery expand',
+    intro: 'Oh you can\'t see the smol boi?!',
+    content: 'LOOKIT EM.'
   },
 
   blog: {

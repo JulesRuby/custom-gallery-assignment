@@ -5,17 +5,20 @@
   <main>
     <h2><%= content %></h2>
     
-    <% starterImages.forEach(function(object) { %>
-      <figure>
-        <a href="images/lrg/<%= object.fileName %>">
-          <img src="images/sm/<%= object.fileName %>" alt="<%= object.title %>">
-        </a>
-        <figcaption>
-          <h3><%= object.attribution.credit %></h3>
-        </figcaption>
-      </figure>
-      <% }) %>
-    
+    <section>
+      
+      <% starterImages.forEach(function(object) { %>
+        <figure>
+          <a href="expandedCard/<%= object.id %>">
+            <img src="images/sm/<%= object.fileName %>" alt="<%= object.title %>">
+          </a>
+          <figcaption>
+            <h3><%= object.attribution.credit %></h3>
+          </figcaption>
+        </figure>
+        <% }) %>
+      
+    </section>
     
   </main>
   <%- include('partials/footer') %>

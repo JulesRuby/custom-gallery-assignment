@@ -18,6 +18,7 @@ const app = express();
 app.locals.moment = require('moment');
 app.locals.dateYear = dateYear;
 
+// making the supplied images available throughout
 app.locals.starterImages = starterImages;
 
 // Define the 'view engine' that we'll be using. In this case it will be ejs, but it could be something like pug or handlebars
@@ -36,9 +37,28 @@ app.get('/gallery', function(req, res) {
   res.render('gallery', pageAttributes.gallery);
 });
 
+
+// This is an attempt to add in data to the pageAttributes to pass to the expanded animal picture, but it's not very dynamic, animal-to-animal
+// app.get('/gallery', function(req, res) {
+//   res.render('gallery', pageAttributes.galleryExpanded);
+// });
+
+//Make the imageID that of the id from the requested data
 app.get('/gallery/:id', function(req, res) {
   app.locals.imageID = req.params.id;
-  res.render('gallery', {});
+  res.render('expandedCard', {});
+});
+
+// trying to figure out a way to potentially dynamically create the title attributes for the expanded image... I don't have enough time right now.
+
+app.get('/expandedCard/:id', function(req, res, next){
+  starterImages.forEach(function(object){
+    if(object.id == req.params.id){
+      res.render('expandedCard',{title: `${req.params.id}`});
+      return;
+    }
+  })
+  next();
 });
 
 app.get('/blog', function(req, res) {

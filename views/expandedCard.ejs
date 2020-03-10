@@ -1,0 +1,25 @@
+<%- include('partials/headexp') %>
+<%- include('partials/headerexp') %>
+
+<body>
+  <main>
+  
+
+  <% starterImages.forEach(object) { 
+    if (object.id == imageID) { %>
+      <figure class="expandedFigure">
+        <img src="../images/lrg/<%= object.fileName %>" alt="<%= object.title %>" class="expandedImage">
+        <figcaption class="expandedCaption">
+          <a href="<%= object.attribution.url %>" class="authorAttribution">
+            <%= object.attribution.credit %>
+          </a>
+          <P>
+            <%= story.attribution.source %>
+          </P>
+        </figcaption>
+      </figure>
+      <% } %>
+  </main>
+<%- include('partials/footer') %>
+</body>
+</html>
