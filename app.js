@@ -51,7 +51,7 @@ app.get('/gallery/:id', function(req, res) {
 
 // trying to figure out a way to potentially dynamically create the title attributes for the expanded image... I don't have enough time right now.
 
-app.get('/expandedCard/:id', function(req, res, next){
+app.get('/gallery/:id', function(req, res, next){
   starterImages.forEach(function(object){
     if(object.id == req.params.id){
       res.render('expandedCard',{title: `${req.params.id}`});

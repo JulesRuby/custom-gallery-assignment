@@ -181,3 +181,7 @@ footer > p {
 
 
 /* This will be where the expanded image figures go. */
+
+.expandedFigure {
+  background-color: lightsalmon;
+}

@@ -5,7 +5,7 @@
   <main>
   
 
-  <% starterImages.forEach(object) { 
+  <% starterImages.forEach(function(object) { 
     if (object.id == imageID) { %>
       <figure class="expandedFigure">
         <img src="../images/lrg/<%= object.fileName %>" alt="<%= object.title %>" class="expandedImage">
@@ -14,11 +14,11 @@
             <%= object.attribution.credit %>
           </a>
           <P>
-            <%= story.attribution.source %>
+            <%= object.attribution.source %>
           </P>
         </figcaption>
       </figure>
-      <% } %>
+      <% }}) %>
   </main>
 <%- include('partials/footer') %>
 </body>
