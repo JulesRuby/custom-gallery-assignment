@@ -177,11 +177,38 @@ footer > p {
 
 
 /* This will be used to make the gallery figures "nicer" */
+.gallery {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
 
+.gal-fig {
+  background-color: lightsalmon;
+}
+
+.gal-fig img {
+  height: 250px;
+  width: 300px;
+}
+
+.gal-fig > figcaption {
+  text-align: center;
+}
 
 
 /* This will be where the expanded image figures go. */
 
 .expandedFigure {
   background-color: lightsalmon;
+  margin: auto;
+
+}
+
+.expandedCaption {
+  text-align: center;
+}
+
+.expandedFigure > img {
+  width: 100%;
 }

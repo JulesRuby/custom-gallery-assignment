@@ -5,10 +5,10 @@
   <main>
     <h2><%= content %></h2>
     
-    <section>
+    <section class="gallery">
       
       <% starterImages.forEach(function(object) { %>
-        <figure>
+        <figure class="gal-fig">
           <a href="gallery/<%= object.id %>">
             <img src="images/sm/<%= object.fileName %>" alt="<%= object.title %>">
           </a>
